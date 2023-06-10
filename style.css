@@ -1,0 +1,257 @@
+*{
+    
+    margin: 0;
+    padding: 0;
+    
+    }
+body{
+    height: 150vh;
+    background-color: black;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-y: scroll; */
+    
+}
+.main-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    flex-wrap: nowrap;
+    /* overflow-y: scroll; */
+}
+.main-input-container{
+    height:40%;
+    width:60%;
+    /* border:1px solid red; */
+    background-color: #38444d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    /* flex-grow: 1; */
+    
+}
+.title-container{
+    height:15%;
+    width: 95%;
+    /* border: 1px solid red; */
+    background-color:  #15202b;;
+    color: aliceblue;
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title-container .material-symbols-outlined{
+    font-size: 80%;
+}
+.input-container{
+    height:70%;
+    width: 95%;
+    /* border: 1px solid red; */
+    background-color:  #15202b;;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+.input-title-container{
+    height:22%;
+    width: 95%;
+    /* border: 1px solid red; */
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+      
+}
+.title-form{
+
+    height: 90%;
+    width: 80%;
+    /* border: 2px solid red; */
+    
+    
+}
+.title-label{
+    height: 30%;
+    font-size: 20px;
+}
+.title-input{
+    height: 40%;
+    width: 100%;
+}
+
+.author-container{
+    height:22%;
+    width: 95%;
+    /* border: 1px solid red; */
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+}
+.author-form{
+    height: 90%;
+    width: 80%;
+    /* border: 1px solid red; */
+}
+.author-label{
+    height: 30%;
+    font-size: 20px;
+}
+.author-input{
+    height: 40%;
+    width: 100%;
+}
+.ISBN-container{
+    height:22%;
+    width: 95%;
+    /* border: 1px solid red; */
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+}
+
+.ISBN-form{
+    height: 90%;
+    width: 80%;
+    /* border: 1px solid red; */
+}
+.ISBN-label{
+    height: 30%;
+    font-size: 20px;
+}
+.ISBN-input{
+    height: 40%;
+    width: 100%;
+}
+
+.submit-button-container{
+    height:22%;
+    width: 95%;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.submit-button{
+    height:60%;
+    width:90%;
+    font-size: larger;
+    font-weight: bolder;
+    background-color:  #04aa6d;
+    border: none;
+    border-radius: 5px;
+    color: whitesmoke;
+}
+.submit-button:hover{
+    background-color: #06e895cd;
+}
+
+.output-container{
+    height: 60%;
+    width: 60%;
+    background-color: #38444d;
+    /* border: 1px solid red; */
+    margin: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    
+    overflow-y: scroll;
+    
+    
+}
+.table-row-container{
+    height:6%;
+    width: 96%;
+    /* border: 1px solid red; */
+    background-color:#15202b ;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    margin-top: 5px;
+    
+    
+}
+.table-row-container .title-container{
+    height:96%;
+    width:20% ;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title-container .table-header-title{
+    font-size: 30px;
+}
+.title-container .table-row-title{
+    overflow-x: auto;
+    font-size: 15px;
+}
+.table-row-container .author-container{
+    height:96%;
+    width:20% ;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.author-container .table-header-author{
+   font-size: 30px;
+}
+.author-container .table-row-author{
+    overflow-x: auto;
+    font-size: 15px;
+}
+.table-row-container .ISBN-container{
+    height:96%;
+    width:20% ;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.ISBN-container .table-header-ISBN{
+    font-size: 30px;
+}
+.ISBN-container .table-row-ISBN{
+    overflow-x: auto;
+    font-size: 15px;
+}
+.table-row-container .delete-button-container{
+    height:96%;
+    width:20% ;
+    /* border: 1px solid red; */
+    font-size: 30px;
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.delete-button{
+    height:90% ;
+    width:90% ;
+    font-size: 16px;
+    font-weight: bolder;
+    color: white;
+    background-color: transparent;
+    border:1px solid rgb(31, 135, 246);
+    border-radius:5px ;
+
+}
+.delete-button:hover{
+    background-color: #e6483d;
+}
+
