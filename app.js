@@ -3,7 +3,7 @@ const authorInput = document.getElementById('author-input');
 const ISBNInput = document.getElementById('ISBN-input');
 const submitButton = document.getElementById('submit-button');
 
-submitButton.addEventListener('click', submitting);
+submitButton.addEventListener('click', addBookItem);
 
 // preparing id for identify each lists
 let id = 0;
@@ -22,7 +22,7 @@ if(localStorage.getItem('booklist')){
 }
 
 function removeList(id){
-    booklist.forEach(books => {
+    booklist.forEach((books, index) => {
         if(books.id === id){
             booklist.splice(index,1);
         }
@@ -106,7 +106,7 @@ function createListedElement(title, author, ISBN, id){
 }
 
 
-function submitting(){
+function addBookItem(){
     const titleDescription = titleInput.value;
     const authorDescription = authorInput.value;
     const ISBNDescription = ISBNInput.value;
