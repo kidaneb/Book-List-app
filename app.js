@@ -11,7 +11,8 @@ if(localStorage.getItem('id')){
     id = JSON.parse(localStorage.getItem('id'));
 }
 
-// preparing an array for storing and retrieving list
+
+//PREPARING AN ARRAY FOR STORING AND RETRIEVING LIST
 
 let booklist = [];
 if(localStorage.getItem('booklist')){
@@ -22,14 +23,16 @@ if(localStorage.getItem('booklist')){
 }
 
 function removeList(id){
-    booklist.forEach((books, index) => {
-        if(books.id === id){
+    booklist.forEach((book, index)=>{
+        if(book.id == id){
             booklist.splice(index,1);
         }
-        
     })
+    localStorage.setItem('booklist',JSON.stringify(booklist));
     document.getElementById(`table-row-container-${id}`).remove();
+
 }
+  
 
 function createListedElement(title, author, ISBN, id){
     // CREATE NEW TABEL ROW CONTAINER
@@ -90,9 +93,12 @@ function createListedElement(title, author, ISBN, id){
     deleteButton.className = 'delete-button';
     deleteButton.id = `delete-button-${id}`;
     deleteButton.innerHTML = 'Delete';
-    deleteButton.addEventListener('click', ()=>removeList(id))
+    
     //APPENDING THE DELETE BUTTON TO THE DELETE BUTTON CONTAINER
     deleteButtonContainer.appendChild(deleteButton);
+
+    // ADDING THE EVENT LISTNER
+    deleteButton.addEventListener('click', ()=>removeList(id));
 
     // APPENDING ELEMENTS TO THE PARENT TABLE ROW CONTAINER
     tableRowContainer.appendChild(titleContainer);
@@ -110,28 +116,46 @@ function addBookItem(){
     const titleDescription = titleInput.value;
     const authorDescription = authorInput.value;
     const ISBNDescription = ISBNInput.value;
-    const books = {
-        title: titleDescription,
-        author:authorDescription,
-        ISBN:ISBNDescription,
-        id:id
+    titleInput.value = "";
+    authorInput.value = "";
+    ISBNInput.value = "";
+    if(validateInput(titleDescription.replace(/\s/g, ""), authorDescription.replace(/\s/g, ""), ISBNDescription.replace(/\s/g, ""))){
+        const books = {
+            title: titleDescription,
+            author:authorDescription,
+            ISBN:ISBNDescription,
+            id:id
+        }
+    
+        id++;
+        localStorage.setItem('id', JSON.stringify(id));
+    
+        booklist.push(books);
+    
+        localStorage.setItem('booklist',JSON.stringify(booklist));    
+    
+        createListedElement(books.title, books.author, books.ISBN, books.id);
     }
+    else{
+        alert("please enter the form correctly")
+    }
+    
 
-    id++;
-    localStorage.setItem('id', JSON.stringify(id));
-
-    booklist.push(books);
-
-    localStorage.setItem('booklist',JSON.stringify(booklist));
-    console.log(booklist);
-
-    createListedElement(books.title, books.author, books.ISBN, books.id);
-
-    console.log(id)
+    
 }
 
-
-
-
-
+function validateInput(titleInput, authorInput, ISBNInput){
+    if(titleInput === "" || authorInput === "" || ISBNInput === ""){
+        return false;
+    }
+    else if(titleInput.length < 5 || authorInput.length < 5 || ISBNInput.length < 5){
+        return false;
+    }
+    else {
+        return true;
+    }
+}
 // localStorage.clear();
+
+
+

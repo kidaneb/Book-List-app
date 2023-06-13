@@ -254,4 +254,15 @@ body{
 .delete-button:hover{
     background-color: #e6483d;
 }
+.showAlert{
+    height: 70px;
+    width:300px;
+    background-color: #e6483d;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+}
 
